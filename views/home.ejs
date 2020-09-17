@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Home Page</title>
+  </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Home Page</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+
+          <button type="button" class="btn btn-sucesss mr-4" style="display: block;">
+            Records <span class="badge badge-light"> <%=count%> </span>
+          </button>
+
+          <form class="form-inline my-2 my-lg-0" action="/user">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" style="display: block;">Send a Mail</button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="table-responsive mt-5 container">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">subject</th>
+                <th scope="col">Delete Record</th>
+                <th scope="col">Edit Record</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% data.forEach((data)=>{%>
+              <tr>
+                <th scope="row"><%=data.dataValues.id%></th>
+                <td><%=data.dataValues.name%></td>
+                <td><%=data.dataValues.email%></td>
+                <td><%=data.dataValues.subject%></td>
+                <td><form action="" method="post"><button type="button" class="btn btn-danger btn-sm">Delete</button></form></td>
+                <td><form action="" method="post"><button type="button" class="btn btn-primary btn-sm">Edit</button></form></td>
+              </tr>
+              <%})%>
+            </tbody>
+          </table>
+      </div>
+
+    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    

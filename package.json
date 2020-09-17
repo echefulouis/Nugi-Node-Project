@@ -1,0 +1,22 @@
+{
+  "name": "sql-server",
+  "version": "1.0.0",
+  "description": "an app to connect to sql database",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "*",
+    "nodemailer": "^6.4.11",
+    "nodemon": "*",
+    "sequelize": "^6.3.5"
+  }
+}
